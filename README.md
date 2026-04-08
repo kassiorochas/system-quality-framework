@@ -1,230 +1,56 @@
-# System Quality Framework
+# System Quality Framework 🎯
 
-Framework público para documentação de qualidade, estratégia de testes, validação end-to-end e pensamento sistêmico aplicado a produtos digitais.
+> **Engenharia de Qualidade, Estratégia de Testes e Validação Sistêmica End-to-End.**
 
-> Este repositório foi estruturado para funcionar como base profissional de GitHub, com foco em documentação pública, autoridade técnica e organização escalável.
-
----
-
-## Overview
-
-Este projeto centraliza uma abordagem prática para:
-
-- estruturar QA Notes e QA Execução em BDD
-- documentar fluxos end-to-end com visão sistêmica
-- registrar regras de negócio e riscos críticos
-- organizar cenários reutilizáveis para web, backoffice e integrações
-- publicar documentação técnica sem expor dados sensíveis, código proprietário ou contexto confidencial
-
-A proposta é simples: transformar trabalho operacional de QA em material estratégico, legível e reaproveitável.
+Este repositório é o meu portfólio público de Engenharia de Qualidade. Ele concentra frameworks, estratégias e padrões de arquitetura de testes elaborados para otimizar a garantia de qualidade em sistemas distribuídos (microserviços e cross-squads).
 
 ---
 
-## Repository Goals
+## 📚 Arquitetura de Qualidade
 
-Este repositório foi pensado para cumprir quatro funções:
+A base do framework documentado aqui foge da execução manual isolada e foca em **Processos de Eficiência Sistêmica**.
 
-1. **Portfólio técnico**
-   Mostrar profundidade de raciocínio, organização e capacidade de estruturar qualidade além da execução manual.
+O principal modelo em destaque é o **QA Sinérgico Orientado a Fluxos End-to-End**.
 
-2. **Base documental**
-   Concentrar templates, métodos, padrões e exemplos públicos.
-
-3. **Material de referência**
-   Facilitar reutilização em estudos, entrevistas, apresentações e publicações.
-
-4. **Autoridade profissional**
-   Posicionar o perfil como alguém que entende fluxo, risco, integração, regra de negócio e impacto sistêmico.
+### 🔗 [Acessar: Estratégia de Sinergia Cross-Squad (Job Rotation & E2E)](docs/strategies/cross-squad-synergy.md)
+Neste documento principal, eu exploro a resolução prática de três dores comuns na Engenharia de Software Moderna:
+1. O Gargalo de Onboarding e Contexto (Prevenção do QA Super-Herói).
+2. A Fila de Correção e Governança de Bugs (Dono do Bug vs. Dono do Fluxo).
+3. Acessos, Segurança da Informação e Compliance.
 
 ---
 
-## Core Principles
+## 🛠️ Princípios Fundamentais
 
-### 1. QA orientado a fluxo
-Qualidade não deve ficar limitada a tela, campo ou endpoint isolado. O foco está no comportamento do fluxo completo.
-
-### 2. Especialização com visão sistêmica
-Profundidade técnica em uma parte do sistema é importante, mas o diferencial está em entender como as peças se conectam.
-
-### 3. Documentação como ativo
-Boas execuções se perdem. Boa documentação escala.
-
-### 4. Público não é sinônimo de exposto
-Documentação pública deve ser útil sem revelar cliente, sistema real, domínio, credenciais, dados pessoais ou lógica comercial sensível.
+1. **Qualidade não fica limitada à tela.** O foco está no comportamento do fluxo completo, desde a lógica no banco de dados até a conversão no frontend do cliente.
+2. **Especialização com visão sistêmica.** Especialização no domínio de uma squad específica garante profundidade; atuar *cross-squads* (multi-skill) garante eficiência de entrega.
+3. **Escalando o Processo.** O papel de QA vai além de achar falhas: atuamos separando a **detecção** (técnica) da **priorização** (negócio/produto).
 
 ---
 
-## Suggested Public Structure
+## 🗺️ Visão Macro de Fluxo E2E
 
-```text
-/docs
-  /templates
-  /strategies
-  /flows
-  /architecture
-
-/examples
-/diagrams
-README.md
-PUBLICATION-GUIDELINES.md
-```
-
----
-
-## Recommended Content
-
-### Documentation
-- QA Notes
-- QA Execução
-- critérios de aceite traduzidos em cenários
-- mapeamento de risco
-- comportamento esperado por fluxo
-- regras de negócio relevantes
-
-### Strategy
-- abordagem de cobertura
-- validação cross-system
-- análise de impacto
-- cenários positivos, negativos e de borda
-- idempotência, fallback, permissão, consistência e rastreabilidade
-
-### Examples
-- exemplos genéricos de BDD
-- exemplos de cenários E2E
-- modelos reutilizáveis para task, bugfix, story fix e integração
-
----
-
-## Recommended Positioning
-
-A mensagem que este repositório transmite não é apenas:
-
-> “eu testo sistema”
-
-A mensagem correta é:
-
-> “eu estruturo qualidade com visão de produto, fluxo, risco e comportamento sistêmico”
-
-Esse enquadramento é mais forte para recrutadores, liderança, produto e engenharia.
-
----
-
-## Safe Publication Rules
-
-Antes de publicar qualquer conteúdo, valide se removeu:
-
-- nomes reais de empresa
-- nomes reais de sistemas
-- URLs reais de ambiente
-- tokens, ids internos e credenciais
-- CPF, telefone, e-mail ou dados de usuário
-- imagens com dados sensíveis
-- detalhes que revelem lógica comercial protegida
-
-Use nomes genéricos como:
-
-- `Backoffice System`
-- `User Platform`
-- `Core Platform`
-- `Admin Portal`
-- `External Provider`
-- `CRM Provider`
-
----
-
-## Files Included in This Base
-
-### `docs/framework-overview.md`
-Visão macro do framework e do racional técnico.
-
-### `PUBLICATION-GUIDELINES.md`
-Regras objetivas para publicar com segurança.
-
-### `docs/templates/qa-notes-template.md`
-Template base de QA Notes em português.
-
-### `docs/templates/qa-execution-template.md`
-Template base de QA Execução em português.
-
-### `docs/templates/bdd-scenarios-template.md`
-Modelo de cenários BDD genéricos.
-
-### `docs/templates/linkedin-post-template.md`
-Estrutura curta para divulgar documentação sem criar post gigante.
-
----
-
-## Diagram
-
-Abaixo, um fluxo genérico para representar validação sistêmica:
+Abaixo, a representação simplificada de como orquestramos o fluxo integrado na perspectiva de validação sistêmica:
 
 ```mermaid
 flowchart LR
-    A[Requirement / Story] --> B[Test Strategy]
-    B --> C[Backoffice Validation]
-    B --> D[User Platform Validation]
-    B --> E[Integration Validation]
-    C --> F[Evidence]
+    A[Requisito de Negócio] --> B{QA Sinérgico / Estratégia E2E}
+    B --> C[Integração: Backoffice]
+    B --> D[Integração: APIs/Middlewares]
+    B --> E[Integração: User Platform]
+    
+    C --> F[Validação Fidedigna Unificada]
     D --> F
     E --> F
-    F --> G[QA Notes]
-    F --> H[QA Execution]
-    G --> I[Release Confidence]
-    H --> I
+    
+    F --> G(Visibilidade Liderança / PO)
 ```
 
 ---
 
-## How To Use This Repository
+## 🔒 Diretrizes de Segurança Pública
 
-1. Publique este repositório como sua base pública.
-2. Adapte o texto do README para seu posicionamento.
-3. Use os templates para transformar execuções reais em documentação pública.
-4. Crie novos arquivos em `docs/flows` e `docs/strategies` conforme evoluir seu conteúdo.
-5. Mantenha projetos comercializáveis e código proprietário em repositórios privados.
+A transparência de processos arquiteturais é crucial, porém a Segurança da Informação do produto é a prioridade zero. 
 
----
-
-## Suggested Next Repositories
-
-Depois deste repositório base, a evolução natural é:
-
-### Public
-- `system-quality-framework`
-- `qa-strategy-notes`
-- `frontend-showcase`
-- `pwa-architecture-notes`
-
-### Private
-- PWAs em produção
-- SaaS próprio
-- código vendável
-- projetos com cliente
-
----
-
-## LinkedIn / External Sharing
-
-Estratégia recomendada:
-
-- fazer um post curto
-- chamar atenção para o raciocínio e não para volume de texto
-- direcionar quem tiver interesse para este repositório ou para um documento específico
-
-Exemplo de chamada:
-
-> Tenho estruturado minha atuação em QA com foco em fluxo end-to-end, documentação reutilizável e visão sistêmica. Para não transformar isso em um post enorme, organizei o material em um repositório público. Quem tiver interesse, pode explorar sem compromisso.
-
----
-
-## Final Note
-
-Este repositório não precisa nascer gigante. Ele precisa nascer consistente.
-
-Clareza, estrutura e recorrência valem mais do que volume.
-
----
-
-## License
-
-Você pode manter este repositório sem licença pública específica ou adicionar uma licença depois, conforme sua estratégia.
+Este repositório segue rígidas normas de *Data Masking*. Para entender minha política de governança ao tornar processos públicos (compliance, omissão de PI e arquitetura sanitizada), consulte nosso documento padrão:
+👉 **[PUBLICATION-GUIDELINES.md](PUBLICATION-GUIDELINES.md)**
