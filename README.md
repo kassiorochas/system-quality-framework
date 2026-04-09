@@ -1,5 +1,11 @@
 # System Quality Framework 🎯
 
+![Quality Status](https://img.shields.io/badge/Quality-A%2B-brightgreen)
+![Framework](https://img.shields.io/badge/Framework-Cypress%20%26%20PWA-blue)
+![Strategy](https://img.shields.io/badge/Strategy-Synergy%20E2E-orange)
+![License](https://img.shields.io/badge/License-MIT-gray)
+![Language](https://img.shields.io/badge/Language-PT--BR-yellow)
+
 > **Engenharia de Qualidade, Estratégia de Testes e Validação Sistêmica End-to-End.**
 
 Este repositório é o meu portfólio público de Engenharia de Qualidade. Ele concentra frameworks, estratégias e padrões de arquitetura de testes elaborados para otimizar a garantia de qualidade em sistemas distribuídos (microserviços e cross-squads).
