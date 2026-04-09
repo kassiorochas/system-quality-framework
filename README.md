@@ -71,4 +71,4 @@ A transparência técnica é acompanhada de rigorosa proteção de dados. Sigo d
 **Cultura:** Agile, Cross-Squad Synergy, Continuous Testing (CI/CD).
 
 ---
-[LICENSE](LICENSE) | Copyright © 2026 Kassio Rocha
+[LICENSE](LICENSE) | Copyright © 2026 Kássio Rocha
