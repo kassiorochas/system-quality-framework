@@ -17,9 +17,10 @@ Este repositório consolida meu framework pessoal de Engenharia de Qualidade, fu
 O framework é dividido em três camadas complementares que garantem a qualidade desde a estratégia até a execução técnica:
 
 ### 1. Estratégia & Cultura (Quality Mindset)
-Focado em quebrar silos entre squads e otimizar o capital humano através da sinergia.
-- **Destaque:** [Estratégia de Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md)
-- **Problema resolvido:** O gargalo do "QA Super-Herói" e a demora no onboarding.
+Focado em quebrar silos entre squads e otimizar o capital humano através da sinergia e documentação viva.
+- **Destaque 1:** [Estratégia de Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md)
+- **Destaque 2:** [Narrativa de Testes (QA Notes & BDD)](docs/strategies/test-narrative-bdd.md)
+- **Problema resolvido:** Falhas de comunicação, gargalos de onboarding e falta de rastreabilidade técnica.
 
 ### 2. Arquitetura de Produto (PWA SaaS)
 Focado na construção de aplicações que suportam falhas e garantem a melhor experiência de usuário.
