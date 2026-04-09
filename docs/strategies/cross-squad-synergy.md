@@ -30,6 +30,27 @@ Para resolver isso, adotamos a abordagem do **Dono do Fluxo E2E**:
 
 Um QA (mesmo pertencendo à Squad C, por exemplo) com mentalidade *multi-skill* toma a frente do fluxo operacional completo, caso tenha conhecimento e acessos.
 
+### Diagrama de Fluxo: Silos vs Sinergia
+
+```mermaid
+graph LR
+    subgraph Squad A
+    QA1[QA Backoffice] -->|Setup| M1(Massa)
+    end
+    subgraph Squad B
+    QA2[QA Core] -->|Valida API| API(API)
+    end
+    subgraph Squad C
+    QA3[QA User Platform] -->|Valida UI| UI(Interface)
+    end
+    
+    subgraph Abordagem Sinérgica E2E
+    QAMulti[QA Multi-Skill E2E] -->|Domina o Fluxo| M1
+    QAMulti --> API
+    QAMulti --> UI
+    end
+```
+
 ### Benefícios Imediatos:
 1. **Otimização de Tempo:** Apenas um QA realiza o setup de massa e executa a jornada, enxergando do disparo no Backoffice (Squad A) até o consumo na User Platform (Squad C).
 2. **Eficiência de Recurso:** Na prática, 2 QAs (das Squads A e B) têm seus tempos liberados para focar em outras tarefas críticas ou com prazo apertado de suas respectivas squads.
