@@ -18,8 +18,8 @@ Imagine o lançamento de uma funcionalidade de Bônus (ex: *FreeChips*). Em uma 
 3. **QA Squad C (User Platform):** Valida a liberação e o consumo do bônus na interface final.
 
 **Riscos dessa abordagem:**
-- **Triplo Esforço:** Três QA's preparando massa, lendo documentações similares e parando suas tarefas.
-- **Falta de Propriedade do Fluxo:** Se ocorrer um bug no meio da jornada, inicia-se o jogo de "não é na minha squad".
+- **Triplo Esforço:** Três QA's preparando massa, lendo documentações similares e deixando de executar outras entregas importantes em suas respectivas squads.
+- **Visão Sistêmica Comprometida:** Se ocorrer um bug numa transição de domínios, o diagnóstico e acompanhamento do fluxo da jornada ficam fragmentados, exigindo tempo extra para identificar e direcionar o relato para a exata squad onde a falha se originou.
 - **Atraso no Go-Live:** O "pronto" do sistema depende do alinhamento da fila de 3 squads.
 
 ---
