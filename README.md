@@ -8,65 +8,67 @@
 
 > **Engenharia de Qualidade, Estratégia de Testes e Validação Sistêmica End-to-End.**
 
-Este repositório é o meu portfólio público de Engenharia de Qualidade. Ele concentra frameworks, estratégias e padrões de arquitetura de testes elaborados para otimizar a garantia de qualidade em sistemas distribuídos (microserviços e cross-squads).
+Este repositório consolida meu framework pessoal de Engenharia de Qualidade, fundamentado na resolução de silos operacionais e na construção de softwares resilientes. O objetivo aqui não é apenas "testar", mas garantir a **Eficiência Sistêmica** em ciclos de entrega modernos.
 
 ---
 
-## 🚀 Conteúdo em Destaque
+## 🏗️ Os 3 Pilares do Framework
 
-| Tópico | Estratégia | Nível | Link |
-| :--- | :--- | :--- | :--- |
-| **Sinergia E2E** | Quebrando silos e otimizando Job Rotation | 🏆 Principal | [Acessar Artigo](docs/strategies/cross-squad-synergy.md) |
-| **PWA SaaS** | Arquitetura Multi-App e Cache Resiliente | 🏗️ Blueprint | [Ver Estrutura](examples/pwa-saas-architecture/) |
-| **Automação** | Cypress: Alta Confiabilidade e Estabilidade | 🧪 Testes | [Ver Padrões](examples/cypress-high-reliability-patterns/) |
-| **Segurança** | Compliance em Ambientes Públicos | 🔒 Segurança | [Ler Diretrizes](PUBLICATION-GUIDELINES.md) |
+O framework é dividido em três camadas complementares que garantem a qualidade desde a estratégia até a execução técnica:
 
----
+### 1. Estratégia & Cultura (Quality Mindset)
+Focado em quebrar silos entre squads e otimizar o capital humano através da sinergia.
+- **Destaque:** [Estratégia de Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md)
+- **Problema resolvido:** O gargalo do "QA Super-Herói" e a demora no onboarding.
 
-## 💡 Por que ler este framework?
+### 2. Arquitetura de Produto (PWA SaaS)
+Focado na construção de aplicações que suportam falhas e garantem a melhor experiência de usuário.
+- **Destaque:** [Blueprint: SaaS PWA Multi-App Architecture](examples/pwa-saas-architecture/)
+- **Problema resolvido:** Instabilidade offline e inconsistência de cache em PWAs complexos.
 
-Este material resolve dores reais de engenharia de software moderna:
-- ⚡ **Redução de Gargalos:** Como evitar que o QA vire o "Super Herói" e trave a entrega.
-- 🎯 **Foco no Resultado:** Detecção técnica separada de priorização de negócio.
-- 🤝 **Sinergia Real:** A transição do QA de "testador de tela" para "estrategista de produto".
-
----
-
-## 📚 Arquitetura de Qualidade
+### 3. Engenharia de Automação (High Reliability)
+Focado na criação de suítes de testes que não falham por instabilidade de ambiente ou DOM.
+- **Destaque:** [Blueprint: Cypress High Reliability Patterns](examples/cypress-high-reliability-patterns/)
+- **Problema resolvido:** Intermitência (flakiness) em testes E2E e dependência de massa manual.
 
 ---
 
-## 🛠️ Princípios Fundamentais
+## 🗺️ Visão Sistêmica Unificada
 
-1. **Qualidade não fica limitada à tela.** O foco está no comportamento do fluxo completo, desde a lógica no banco de dados até a conversão no frontend do cliente.
-2. **Especialização com visão sistêmica.** Especialização no domínio de uma squad específica garante profundidade; atuar *cross-squads* (multi-skill) garante eficiência de entrega.
-3. **Escalando o Processo.** O papel de QA vai além de achar falhas: atuamos separando a **detecção** (técnica) da **priorização** (negócio/produto).
-
----
-
-## 🗺️ Visão Macro de Fluxo E2E
-
-Abaixo, a representação simplificada de como orquestramos o fluxo integrado na perspectiva de validação sistêmica:
+Este diagrama representa como os 3 pilares se integram na minha metodologia de trabalho:
 
 ```mermaid
-flowchart LR
-    A[Requisito de Negócio] --> B{QA Sinérgico / Estratégia E2E}
-    B --> C[Integração: Backoffice]
-    B --> D[Integração: APIs/Middlewares]
-    B --> E[Integração: User Platform]
+flowchart TD
+    subgraph Pilar_1 [Estratégia & Cultura]
+    A[Sinergia Cross-Squad] --> B(Job Rotation)
+    end
     
-    C --> F[Validação Fidedigna Unificada]
-    D --> F
-    E --> F
+    subgraph Pilar_2 [Arquitetura de Produto]
+    C[PWA SaaS Architecture] --> D(Resiliência Offline)
+    end
     
-    F --> G(Visibilidade Liderança / PO)
+    subgraph Pilar_3 [Engenharia de Automação]
+    E[Cypress Reliability] --> F(Idempotência/DB)
+    end
+    
+    B & D & F --> G{QUALIDADE SISTÊMICA}
+    G --> H[Entrega com Valor de Negócio]
 ```
 
 ---
 
-## 🔒 Diretrizes de Segurança Pública
+## 🔒 Governança e Segurança
 
-A transparência de processos arquiteturais é crucial, porém a Segurança da Informação do produto é a prioridade zero. 
+A transparência técnica é acompanhada de rigorosa proteção de dados. Sigo diretrizes estritas de *Data Masking* e *Compliance* para garantir que nenhum dado sensível ou comercial seja exposto neste portfólio.
+- 👉 **[Consulte as Diretrizes de Publicação](PUBLICATION-GUIDELINES.md)**
 
-Este repositório segue rígidas normas de *Data Masking*. Para entender minha política de governança ao tornar processos públicos (compliance, omissão de PI e arquitetura sanitizada), consulte nosso documento padrão:
-👉 **[PUBLICATION-GUIDELINES.md](PUBLICATION-GUIDELINES.md)**
+---
+
+## 🛠️ Tecnologias e Ferramentas Cobertas
+**QA & Testing:** Cypress, Playwright, Appium, Jest.  
+**Frontend & PWA:** React, PWA (Service Workers, Cache API, Manifest), HTML5/CSS3.  
+**Backend & Cloud:** Firebase (Firestore/Auth/Hosting), Node.js, REST APIs.  
+**Cultura:** Agile, Cross-Squad Synergy, Continuous Testing (CI/CD).
+
+---
+[LICENSE](LICENSE) | Copyright © 2026 Kassio Rocha
