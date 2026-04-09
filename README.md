@@ -11,7 +11,8 @@ Este repositório é o meu portfólio público de Engenharia de Qualidade. Ele c
 | Tópico | Estratégia | Nível | Link |
 | :--- | :--- | :--- | :--- |
 | **Sinergia E2E** | Quebrando silos e otimizando Job Rotation | 🏆 Principal | [Acessar Artigo](docs/strategies/cross-squad-synergy.md) |
-| **Governânça** | Gestão de Bugs e Dono do Fluxo | ⚙️ Processo | [Ver Detalhes](docs/strategies/cross-squad-synergy.md#governança-e-a-fila-de-correção-dono-do-bug) |
+| **PWA SaaS** | Arquitetura Multi-App e Cache Resiliente | 🏗️ Blueprint | [Ver Estrutura](examples/pwa-saas-architecture/) |
+| **Automação** | Cypress: Alta Confiabilidade e Estabilidade | 🧪 Testes | [Ver Padrões](examples/cypress-high-reliability-patterns/) |
 | **Segurança** | Compliance em Ambientes Públicos | 🔒 Segurança | [Ler Diretrizes](PUBLICATION-GUIDELINES.md) |
 
 ---
