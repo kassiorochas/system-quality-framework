@@ -6,17 +6,26 @@ Este repositório é o meu portfólio público de Engenharia de Qualidade. Ele c
 
 ---
 
+## 🚀 Conteúdo em Destaque
+
+| Tópico | Estratégia | Nível | Link |
+| :--- | :--- | :--- | :--- |
+| **Sinergia E2E** | Quebrando silos e otimizando Job Rotation | 🏆 Principal | [Acessar Artigo](docs/strategies/cross-squad-synergy.md) |
+| **Governânça** | Gestão de Bugs e Dono do Fluxo | ⚙️ Processo | [Ver Detalhes](docs/strategies/cross-squad-synergy.md#governança-e-a-fila-de-correção-dono-do-bug) |
+| **Segurança** | Compliance em Ambientes Públicos | 🔒 Segurança | [Ler Diretrizes](PUBLICATION-GUIDELINES.md) |
+
+---
+
+## 💡 Por que ler este framework?
+
+Este material resolve dores reais de engenharia de software moderna:
+- ⚡ **Redução de Gargalos:** Como evitar que o QA vire o "Super Herói" e trave a entrega.
+- 🎯 **Foco no Resultado:** Detecção técnica separada de priorização de negócio.
+- 🤝 **Sinergia Real:** A transição do QA de "testador de tela" para "estrategista de produto".
+
+---
+
 ## 📚 Arquitetura de Qualidade
-
-A base do framework documentado aqui foge da execução manual isolada e foca em **Processos de Eficiência Sistêmica**.
-
-O principal modelo em destaque é o **QA Sinérgico Orientado a Fluxos End-to-End**.
-
-### 🔗 [Acessar: Estratégia de Sinergia Cross-Squad (Job Rotation & E2E)](docs/strategies/cross-squad-synergy.md)
-Neste documento principal, eu exploro a resolução prática de três dores comuns na Engenharia de Software Moderna:
-1. O Gargalo de Onboarding e Contexto (Prevenção do QA Super-Herói).
-2. A Fila de Correção e Governança de Bugs (Dono do Bug vs. Dono do Fluxo).
-3. Acessos, Segurança da Informação e Compliance.
 
 ---
 

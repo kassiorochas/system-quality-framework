@@ -1,3 +1,5 @@
+⬅️ [Voltar para o Início](../../README.md)
+
 # Estratégia de Qualidade: Sinergia Cross-Squad em Fluxos End-to-End
 
 **Conceito Central:**
@@ -74,3 +76,6 @@ Em hipótese alguma a sinergia E2E burla regras da LGPD ou políticas de Seguran
 ## Conclusão
 
 Ser um QA Especialista no sistema da sua squad é a fundação. No entanto, ser **multi-skill e atuar na sinergia entre produtos** é o que de fato gera impacto em métricas de entrega e negócio. Reduzimos atrito, paramos de testar em silos, mitigamos riscos corporativos e validamos a qualidade com mentalidade total de produto.
+
+---
+⬅️ [Voltar para o Início](../../README.md)
