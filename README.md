@@ -1,75 +1,79 @@
 # System Quality Framework 🎯
 
 ![Quality Status](https://img.shields.io/badge/Quality-A%2B-brightgreen)
-![Framework](https://img.shields.io/badge/Framework-Cypress%20%26%20PWA-blue)
-![Strategy](https://img.shields.io/badge/Strategy-Synergy%20E2E-orange)
+![Framework](https://img.shields.io/badge/Framework-Cypress%20%26%20Playwright-blue)
+![Strategy](https://img.shields.io/badge/Strategy-Enterprise%20Governance-orange)
+![Experience](https://img.shields.io/badge/Experience-15%2B%20Years-gold)
 ![License](https://img.shields.io/badge/License-MIT-gray)
-![Language](https://img.shields.io/badge/Language-PT--BR-yellow)
 
-> **Engenharia de Qualidade, Estratégia de Testes e Validação Sistêmica End-to-End.**
+> **Engenharia de Qualidade Sistêmica, Governança Corporativa e Automação de Alta Performance.**
 
-Este repositório consolida meu framework pessoal de Engenharia de Qualidade, fundamentado na resolução de silos operacionais e na construção de softwares resilientes. O objetivo aqui não é apenas "testar", mas garantir a **Eficiência Sistêmica** em ciclos de entrega modernos.
+Este repositório consolida meu framework pessoal de Engenharia de Qualidade, fundamentado na resolução de silos operacionais, mitigação de riscos em ambientes Tier 1 (Telecom/Banking) e na construção de softwares resilientes.
 
 ---
 
 ## 🏗️ Os 3 Pilares do Framework
 
-O framework é dividido em três camadas complementares que garantem a qualidade desde a estratégia até a execução técnica:
+O framework garante a qualidade desde a alta gestão estratégica até a execução técnica de ponta:
 
-### 1. Estratégia & Cultura (Quality Mindset)
-Focado em quebrar silos entre squads e otimizar o capital humano através da sinergia e documentação viva.
-- **Destaque 1:** [Estratégia de Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md)
-- **Destaque 2:** [Narrativa de Testes (QA Notes & BDD)](docs/strategies/test-narrative-bdd.md)
-- **Problema resolvido:** Falhas de comunicação, gargalos de onboarding e falta de rastreabilidade técnica.
+### 1. Estratégia & Governança (Quality Leadership)
+Focado em quebrar silos e gerenciar riscos em ambientes corporativos de larga escala.
+- **Destaque 1:** [Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md) - Otimização de times.
+- **Destaque 2:** [Governança Corporativa e Risco](docs/strategies/enterprise-governance.md) - Gestão de fornecedores e War Rooms.
+- **Destaque 3:** [Narrativa de Testes (QA Notes & BDD)](docs/strategies/test-narrative-bdd.md) - Documentação técnica de alto nível.
 
-### 2. Arquitetura de Produto (PWA SaaS)
+### 2. Arquitetura de Produto (Resiliência)
 Focado na construção de aplicações que suportam falhas e garantem a melhor experiência de usuário.
-- **Destaque:** [Blueprint: SaaS PWA Multi-App Architecture](examples/pwa-saas-architecture/)
-- **Problema resolvido:** Instabilidade offline e inconsistência de cache em PWAs complexos.
+- **Destaque:** [Blueprint: SaaS PWA Architecture](examples/pwa-saas-architecture/)
+- **Problema resolvido:** Instabilidade offline e inconsistência de dados em redes instáveis.
 
 ### 3. Engenharia de Automação (High Reliability)
-Focado na criação de suítes de testes que não falham por instabilidade de ambiente ou DOM.
-- **Destaque:** [Blueprint: Cypress High Reliability Patterns](examples/cypress-high-reliability-patterns/)
-- **Problema resolvido:** Intermitência (flakiness) em testes E2E e dependência de massa manual.
+Suítes de testes resilientes para Web, Mobile e integrações de Banco de Dados.
+- **Web/E2E:** [Cypress High Reliability Patterns](examples/cypress-high-reliability-patterns/)
+- **Mobile Mobile:** [Playwright Mobile Performance](examples/mobile-playwright-patterns/)
+- **Database:** Validação profunda de persistência via **HeidiSQL/SQL Scripts**.
 
 ---
 
 ## 🗺️ Visão Sistêmica Unificada
 
-Este diagrama representa como os 3 pilares se integram na minha metodologia de trabalho:
-
 ```mermaid
 flowchart TD
-    subgraph Pilar_1 [Estratégia & Cultura]
-    A[Sinergia Cross-Squad] --> B(Job Rotation)
+    subgraph Pilar_1 [Estratégia & Governança]
+    A[Gestão de Risco] --> B(Orquestração de Fornecedores)
     end
     
-    subgraph Pilar_2 [Arquitetura de Produto]
+    subgraph Pilar_2 [Arquitetura & Resiliência]
     C[PWA SaaS Architecture] --> D(Resiliência Offline)
     end
     
-    subgraph Pilar_3 [Engenharia de Automação]
-    E[Cypress Reliability] --> F(Idempotência/DB)
+    subgraph Pilar_3 [Engenharia & Automação]
+    E[Playwright/Cypress] --> F(Validação Full-Stack: UI/API/DB)
     end
     
     B & D & F --> G{QUALIDADE SISTÊMICA}
-    G --> H[Entrega com Valor de Negócio]
+    G --> H[Entrega Segura em Larga Escala]
 ```
 
 ---
 
-## 🔒 Governança e Segurança
+## 💼 Carreira e Consultoria
+Além da técnica, foco no posicionamento estratégico do QA como parceiro de negócio.
+- 👉 **[Guia de Upgrade de Carreira (LinkedIn Sênior)](docs/career/linkedin-revamp.md)**
 
-A transparência técnica é acompanhada de rigorosa proteção de dados. Sigo diretrizes estritas de *Data Masking* e *Compliance* para garantir que nenhum dado sensível ou comercial seja exposto neste portfólio.
+---
+
+## 🔒 Governança e Segurança
+Este repositório segue rígidas normas de *Data Masking* e *Compliance*.
 - 👉 **[Consulte as Diretrizes de Publicação](PUBLICATION-GUIDELINES.md)**
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas Cobertas
-**QA & Testing:** Cypress, Playwright, Appium, Jest.  
-**Frontend & PWA:** React, PWA (Service Workers, Cache API, Manifest), HTML5/CSS3.  
-**Backend & Cloud:** Firebase (Firestore/Auth/Hosting), Node.js, REST APIs.  
-**Cultura:** Agile, Cross-Squad Synergy, Continuous Testing (CI/CD).
+## 🛠️ Tecnologias e Ferramentas
+**QA & Testing:** Cypress, Playwright (Web & Mobile), Appium, Jest.  
+**Frontend & PWA:** React, PWA Service Workers, Cache API.  
+**Backend & Database:** Node.js, REST APIs, **HeidiSQL / SQL Server / MySQL**.  
+**DevOps & Cloud:** **Azure DevOps (Boards, Test Plans, Analytics)**, GitHub Actions.
 
 ---
 [LICENSE](LICENSE) | Copyright © 2026 Kássio Rocha
