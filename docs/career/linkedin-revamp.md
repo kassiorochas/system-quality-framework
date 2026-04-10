@@ -44,6 +44,7 @@ Focar na modernidade técnica.
 
 **Bullet Points de impacto:**
 - **Arquitetura de Testes:** Desenvolvimento de frameworks de automação resilientes utilizando Cypress e Playwright, com foco em resiliência offline para PWAs.
+- **Root Cause Analysis (RCA):** Diagnóstico técnico de bugs em camadas de API e Banco de Dados, reduzindo o ciclo de correção ao identificar falhas de lógica em tipos de dados entre Frontend e Backend.
 - **Full-Stack Validation:** Validação ponta-a-ponta incluindo Banco de Dados (HeidiSQL/SQL) e chamadas de API (DevTools), garantindo a integridade dos dados na jornada do usuário.
 
 ---

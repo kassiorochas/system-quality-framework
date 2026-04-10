@@ -18,7 +18,7 @@ Criado no início do ciclo da tarefa. O objetivo é mapear o "o quê" e o "como"
 - **Objetivo:** Descrição clara do benefício ou funcionalidade sendo validada.
 - **Escopo e Escopo Negativo:** O que será testado e, crucialmente, o que *não* será (limitação de riscos).
 - **Dependências:** Mapeamento de pre-requisitos (ambientes, usuários específicos, massa prévia).
-- **Pontos de Atenção:** Identificação proativa de riscos de regressão e efeitos colaterais.
+- **Pontos de Atenção & RCA (Root Cause Analysis):** Um diferencial deste framework é o diagnóstico antecipado. Se um BUG é identificado no refinamento, documentamos a causa raiz (ex: inconsistência de tipos de dados entre Front e API) para acelerar a correção.
 
 ### 2. QA Execução (Fase de Validação Técnica)
 Documento focado na evidência e na rastreabilidade, organizado por blocos lógicos.
@@ -45,10 +45,11 @@ Uso extensivo do **DevTools** e logs de servidor para validar o tráfego de dado
 
 ## 📝 Template de Exemplo (Story: Resgate de Bônus)
 
-### [QA Notes]
-*   **Objetivo:** Validar o resgate manual de bônus via Backoffice e o reflexo imediato no saldo do usuário.
-*   **Atenção:** O saldo deve ser atualizado instantaneamente no cache do PWA.
-*   **Dependência:** Banco de dados de Homologação disponível para consulta via HeidiSQL.
+### [QA Notes - Exemplo Real Sanitizado]
+*   **Cenário:** Falha de Fallback em Geolocalização.
+*   **Diagnóstico RCA:** Identificado que o Frontend envia a string `"undefined"` quando a captura de GPS falha, em vez de um valor nulo/nativo. 
+*   **Impacto Técnico:** A API não trata a string como ausência de dado, causando erro no fluxo de persistência.
+*   **Pre-condição Técnica:** Forçar expiração de cadastro via DB (`UPDATE users SET updated_at = DATE_SUB(NOW(), INTERVAL 1 YEAR) WHERE id = 'X'`).
 
 ### [QA Execução]
 **Bloco 1: Concessão no Backoffice**
