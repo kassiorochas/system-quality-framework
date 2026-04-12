@@ -61,8 +61,7 @@ flowchart TD
 ---
 
 ## 🔒 Governança e Segurança
-A transparência técnica é acompanhada de rigorosa proteção de dados. Sigo diretrizes estritas de *Data Masking* e *Compliance*.
-- 👉 **[Consulte as Diretrizes de Publicação](PUBLICATION-GUIDELINES.md)**
+Toda a documentação e exemplos deste framework seguem diretrizes rigorosas de **Data Masking e Compliance**, garantindo que nenhum dado real ou sensível seja exposto (Sanitização E2E).
 
 ---
 
