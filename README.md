@@ -32,7 +32,7 @@ Construindo softwares que suportam falhas e garantem uma boa experiência.
 Automação robusta para Web, Mobile e Banco de Dados.
 - **Web/E2E:** [Cypress High Reliability Patterns](examples/cypress-high-reliability-patterns/)
 - **Mobile Mobile:** [Playwright Mobile Performance](examples/mobile-playwright-patterns/)
-- **Database:** Validação profunda via **SQL/HeidiSQL**.
+- **Database Audit:** [Database Validation Patterns (SQL/HeidiSQL)](examples/database-validation-patterns/)
 
 ---
 
