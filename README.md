@@ -60,9 +60,9 @@ flowchart TD
 
 ---
 
-## 💼 Carreira
-Sugestões de como posicionar essas competências no mercado sênior.
-- 👉 **[Guia de Upgrade: LinkedIn Sênior](docs/career/linkedin-revamp.md)**
+## 🔒 Governança e Segurança
+A transparência técnica é acompanhada de rigorosa proteção de dados. Sigo diretrizes estritas de *Data Masking* e *Compliance*.
+- 👉 **[Consulte as Diretrizes de Publicação](PUBLICATION-GUIDELINES.md)**
 
 ---
 
