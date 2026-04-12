@@ -18,20 +18,21 @@ Aqui, o foco não é apenas "encontrar falhas", mas garantir que o processo de e
 
 O framework é organizado em três camadas fundamentais para garantir a qualidade sistêmica:
 
-### 1. Estratégia & Governança (Liderança de Quality)
-Como organizar times e gerenciar riscos em ambientes complexos.
-- **[Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md):** Focado em otimizar a colaboração entre diferentes squads.
-- **[Governança e Mitigação de Risco](docs/strategies/enterprise-governance.md):** Como lidar com múltiplos parceiros, War Rooms e prazos críticos.
-- **[Narrativa de Testes (QA Notes & BDD)](docs/strategies/test-narrative-bdd.md):** Como documentar com clareza para que todos os envolvidos entendam o que está sendo testado.
+### 1. Orquestração de Qualidade (Technical Leadership)
+Como liderar a qualidade sistêmica e gerenciar riscos em ambientes complexos.
+- **[Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md):** Focado em orquestrar a colaboração entre diferentes silos técnicos.
+- **[Governança e Mitigação de Risco](docs/strategies/enterprise-governance.md):** Gestão de parceiros, War Rooms e criticidade de prazos.
+- **[Narrativa de Testes (QA Notes & BDD)](docs/strategies/test-narrative-bdd.md):** Documentação técnica que serve de ponte entre o negócio e a engenharia.
+- **[Assets: Templates de Liderança](examples/templates/):** Checklists de prontidão e Matrizes de Risco.
 
 ### 2. Arquitetura & Resiliência
 Construindo softwares que suportam falhas e garantem uma boa experiência.
-- **[Blueprint: SaaS PWA Architecture](examples/pwa-saas-architecture/):** Soluções para resiliência offline e consistência de dados.
+- **[Blueprint: SaaS PWA Architecture](examples/pwa-saas-architecture/):** Resiliência offline e consistência de dados.
 
 ### 3. Engenharia de Automação (Execução Técnica)
 Automação robusta para Web, Mobile e Banco de Dados.
 - **Web/E2E:** [Cypress High Reliability Patterns](examples/cypress-high-reliability-patterns/)
-- **Mobile Mobile:** [Playwright Mobile Performance](examples/mobile-playwright-patterns/)
+- **Mobile/Performance:** [Playwright Mobile Performance](examples/mobile-playwright-patterns/)
 - **Database Audit:** [Database Validation Patterns (SQL/HeidiSQL)](examples/database-validation-patterns/)
 
 ---
