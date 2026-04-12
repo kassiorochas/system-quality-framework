@@ -3,7 +3,7 @@
 ![Status](https://img.shields.io/badge/Status-Ativo-brightgreen)
 ![Tecnologias](https://img.shields.io/badge/Stack-Cypress%20%26%20Playwright-blue)
 ![Estratégia](https://img.shields.io/badge/Estratégia-Governança%20Corporativa-orange)
-![Experiência](https://img.shields.io/badge/Experiência-15%2B%20Anos-gold)
+![Experiência](https://img.shields.io/badge/Experiência-14%2B%20Anos-gold)
 ![Licença](https://img.shields.io/badge/Licença-MIT-gray)
 
 > **Estratégia, Governança e Automação de Alta Performance.**
