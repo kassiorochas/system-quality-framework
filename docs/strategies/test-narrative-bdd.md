@@ -2,64 +2,53 @@
 
 # Metodologia: Narrativa de Testes (Full-Stack Quality)
 
-**Conceito Central:**
-> "A qualidade sistêmica é alcançada quando o teste valida não apenas o comportamento visual, mas a integridade da jornada completa: da Interface ao Banco de Dados."
+**Conceito:**
+> "A qualidade sistêmica é alcançada quando o teste valida não apenas a tela, mas a integridade de toda a jornada: da interface ao banco de dados."
 
-Este documento detalha meu workflow operacional para execução de tarefas de qualidade, utilizando uma abordagem de **Narrativa de Testes** que integra refinamento de requisitos (Shift-Left), execução em BDD e validação técnica profunda.
-
----
-
-## 🏗️ Os Dois Estágios da Operação
-
-Ao assumir uma tarefa no Jira, o processo é dividido em dois documentos vivos:
-
-### 1. QA Notes (Fase de Descoberta/Refinamento)
-Criado no início do ciclo da tarefa. O objetivo é mapear o "o quê" e o "como" antes da execução propriamente dita.
-- **Objetivo:** Descrição clara do benefício ou funcionalidade sendo validada.
-- **Escopo e Escopo Negativo:** O que será testado e, crucialmente, o que *não* será (limitação de riscos).
-- **Dependências:** Mapeamento de pre-requisitos (ambientes, usuários específicos, massa prévia).
-- **Pontos de Atenção & RCA (Root Cause Analysis):** Um diferencial deste framework é o diagnóstico antecipado. Se um BUG é identificado no refinamento, documentamos a causa raiz (ex: inconsistência de tipos de dados entre Front e API) para acelerar a correção.
-
-### 2. QA Execução (Fase de Validação Técnica)
-Documento focado na evidência e na rastreabilidade, organizado por blocos lógicos.
-- **Estrutura BDD (Behavior-Driven Development):** Escrita baseada em cenários (Dado/Quando/Então) usando linguagem ubíqua para facilitar o entendimento de todos os stakeholders.
-- **Rastreabilidade:** Cada bloco de execução é vinculado a evidências técnicas (logs, prints, links de ferramentas de captura).
+Este documento detalha o meu workflow operacional para execução de testes. Utilizo uma abordagem chamada **Narrativa de Testes**, que organiza a estratégia em dois momentos principais: o planejamento antecipado (QA Notes) e a execução detalhada (QA Execução).
 
 ---
 
-## 🔍 Validação Full-Stack: Além da Tela
+## 🏗️ As Duas Fases da Entrega
 
-Um diferencial sênior deste framework é a profundidade da validação técnica em cada cenário:
+Sempre que inicio uma tarefa, divido o meu trabalho em dois estágios:
 
-### Validação de Banco de Dados (Database Testing)
-Utilizo ferramentas como **HeidiSQL** para validar se as operações realizadas na interface persistiram corretamente no banco de dados.
-- **Consultas Customizadas:** Escrita de queries SQL para validar integridade de registros, tabelas de log e alterações de estado.
-- **Idempotência:** Garantir que o estado final do banco após o teste permite a reprodutibilidade do cenário.
+### 1. QA Notes (Planejamento e Descoberta)
+Criado logo no início da tarefa. O foco aqui é o **Shift-Left** (trazer a qualidade para o começo do processo).
+- **Objetivo:** Descrição clara do que está sendo validado.
+- **Escopo:** O que será testado e o que está fora do escopo.
+- **Dependências:** O que eu preciso ter em mãos (ambientes, massa de dados, permissões) para começar.
+- **Diagnóstico Prévio (RCA):** Se um problema for identificado já no refinamento, documento a possível causa raiz (ex: erro de tipo de dado) para que o desenvolvedor já saiba por onde começar.
 
-### Validação de Backend e Network (API Testing)
-Uso extensivo do **DevTools** e logs de servidor para validar o tráfego de dados.
-- **Payloads e Contratos:** Verificação se os dados enviados nas requisições (JSON) estão de acordo com o esperado e se os status codes retornados condizem com as regras de negócio.
-- **Observabilidade:** Análise de logs de rede para diagnosticar erros que podem não ser visíveis visualmente no frontend.
+### 2. QA Execução (Evidência Técnica)
+Focado no registro da execução real, garantindo que o teste seja auditável e claro.
+- **Escrita em BDD:** Uso da estrutura Dado/Quando/Então em linguagem clara para que todos os stakeholders entendam o resultado.
+- **Rastreabilidade:** Cada cenário é acompanhado de evidências técnicas, como logs de rede, prints ou links de captura de tela.
 
 ---
 
-## 📝 Template de Exemplo (Story: Resgate de Bônus)
+## 🔍 Validação Full-Stack: Além do Visual
 
-### [QA Notes - Exemplo Real Sanitizado]
-*   **Cenário:** Falha de Fallback em Geolocalização.
-*   **Diagnóstico RCA:** Identificado que o Frontend envia a string `"undefined"` quando a captura de GPS falha, em vez de um valor nulo/nativo. 
-*   **Impacto Técnico:** A API não trata a string como ausência de dado, causando erro no fluxo de persistência.
-*   **Pre-condição Técnica:** Forçar expiração de cadastro via DB (`UPDATE users SET updated_at = DATE_SUB(NOW(), INTERVAL 1 YEAR) WHERE id = 'X'`).
+Um diferencial desta metodologia é a profundidade técnica em cada validação:
 
-### [QA Execução]
-**Bloco 1: Concessão no Backoffice**
-- **Cenário 1:** Conceder bônus de R$ 50,00 para usuário VIP.
-    - **BDD:** *Dado* que acesso o painel admin... *Quando* concedo bônus... *Então* a requisição POST deve retornar status 201.
-    - **DB Check:** `SELECT balance FROM user_wallet WHERE user_id = 'X'` deve mostrar o valor incrementado.
+### Banco de Dados (Database Testing)
+Utilizo ferramentas como **SQL Server / MySQL** para garantir que o que aconteceu na tela foi gravado corretamente no banco.
+- **Consultas (Queries):** Validação de persistência de dados e integridade de registros.
 
-**Bloco 2: Consumo no PWA (Frontend)**
-- **Cenário 2:** Visualizar saldo atualizado em tempo real.
-    - **BDD:** *Dado* que estou logado no PWA... *Quando* acesso a carteira... *Então* o bônus deve estar visível corretamente.
+### Backend e Network (API Testing)
+Uso do **DevTools** para acompanhar o tráfego de dados.
+- **Validação de Payload:** Verificação se os dados enviados e os códigos de resposta (Status Codes) estão corretos.
+- **Observabilidade:** Identificação de erros silenciosos que não aparecem na interface, mas impactam o sistema.
+
+---
+
+## 📝 Exemplo Prático (QA Notes)
+
+### [Diagnóstico de Causa Raiz - Exemplo]
+*   **Cenário:** Falha no campo de Geolocalização.
+*   **Análise:** Identificado que, quando o GPS falha, o Frontend envia a palavra `"undefined"` em vez de um valor vazio. 
+*   **Impacto:** Isso causa erro na API que espera um valor nulo, não uma String.
+*   **Dica Técnica:** Preparar a massa de dados forçando a expiração do cadastro no banco via SQL para testar o fluxo de atualização.
 
 ---
 ⬅️ [Voltar para o Início](../../README.md)

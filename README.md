@@ -1,79 +1,76 @@
-# System Quality Framework 🎯
+# System Quality Framework (SQF) 🎯
 
-![Quality Status](https://img.shields.io/badge/Quality-A%2B-brightgreen)
-![Framework](https://img.shields.io/badge/Framework-Cypress%20%26%20Playwright-blue)
-![Strategy](https://img.shields.io/badge/Strategy-Enterprise%20Governance-orange)
-![Experience](https://img.shields.io/badge/Experience-15%2B%20Years-gold)
-![License](https://img.shields.io/badge/License-MIT-gray)
+![Status](https://img.shields.io/badge/Status-Ativo-brightgreen)
+![Tecnologias](https://img.shields.io/badge/Stack-Cypress%20%26%20Playwright-blue)
+![Estratégia](https://img.shields.io/badge/Estratégia-Governança%20Corporativa-orange)
+![Experiência](https://img.shields.io/badge/Experiência-15%2B%20Anos-gold)
+![Licença](https://img.shields.io/badge/Licença-MIT-gray)
 
-> **Engenharia de Qualidade Sistêmica, Governança Corporativa e Automação de Alta Performance.**
+> **Estratégia, Governança e Automação de Alta Performance.**
 
-Este repositório consolida meu framework pessoal de Engenharia de Qualidade, fundamentado na resolução de silos operacionais, mitigação de riscos em ambientes Tier 1 (Telecom/Banking) e na construção de softwares resilientes.
+Este repositório reúne o meu framework pessoal de Engenharia de Qualidade. Ele foi construído para resolver problemas que vivi na prática, como a falta de comunicação entre times (silos), riscos em grandes lançamentos corporativos e a necessidade de automações que sejam realmente confiáveis.
+
+Aqui, o foco não é apenas "encontrar falhas", mas garantir que o processo de entrega seja eficiente do início ao fim.
 
 ---
 
 ## 🏗️ Os 3 Pilares do Framework
 
-O framework garante a qualidade desde a alta gestão estratégica até a execução técnica de ponta:
+O framework é organizado em três camadas fundamentais para garantir a qualidade sistêmica:
 
-### 1. Estratégia & Governança (Quality Leadership)
-Focado em quebrar silos e gerenciar riscos em ambientes corporativos de larga escala.
-- **Destaque 1:** [Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md) - Otimização de times.
-- **Destaque 2:** [Governança Corporativa e Risco](docs/strategies/enterprise-governance.md) - Gestão de fornecedores e War Rooms.
-- **Destaque 3:** [Narrativa de Testes (QA Notes & BDD)](docs/strategies/test-narrative-bdd.md) - Documentação técnica de alto nível.
+### 1. Estratégia & Governança (Liderança de Quality)
+Como organizar times e gerenciar riscos em ambientes complexos.
+- **[Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md):** Focado em otimizar a colaboração entre diferentes squads.
+- **[Governança e Mitigação de Risco](docs/strategies/enterprise-governance.md):** Como lidar com múltiplos parceiros, War Rooms e prazos críticos.
+- **[Narrativa de Testes (QA Notes & BDD)](docs/strategies/test-narrative-bdd.md):** Como documentar com clareza para que todos os envolvidos entendam o que está sendo testado.
 
-### 2. Arquitetura de Produto (Resiliência)
-Focado na construção de aplicações que suportam falhas e garantem a melhor experiência de usuário.
-- **Destaque:** [Blueprint: SaaS PWA Architecture](examples/pwa-saas-architecture/)
-- **Problema resolvido:** Instabilidade offline e inconsistência de dados em redes instáveis.
+### 2. Arquitetura & Resiliência
+Construindo softwares que suportam falhas e garantem uma boa experiência.
+- **[Blueprint: SaaS PWA Architecture](examples/pwa-saas-architecture/):** Soluções para resiliência offline e consistência de dados.
 
-### 3. Engenharia de Automação (High Reliability)
-Suítes de testes resilientes para Web, Mobile e integrações de Banco de Dados.
+### 3. Engenharia de Automação (Execução Técnica)
+Automação robusta para Web, Mobile e Banco de Dados.
 - **Web/E2E:** [Cypress High Reliability Patterns](examples/cypress-high-reliability-patterns/)
 - **Mobile Mobile:** [Playwright Mobile Performance](examples/mobile-playwright-patterns/)
-- **Database:** Validação profunda de persistência via **HeidiSQL/SQL Scripts**.
+- **Database:** Validação profunda via **SQL/HeidiSQL**.
 
 ---
 
-## 🗺️ Visão Sistêmica Unificada
+## 🗺️ Visão Unificada do Processo
+
+Este diagrama ilustra como os pilares se conectam para entregar valor:
 
 ```mermaid
 flowchart TD
-    subgraph Pilar_1 [Estratégia & Governança]
-    A[Gestão de Risco] --> B(Orquestração de Fornecedores)
+    subgraph P1 [Estratégia & Governança]
+    A[Gestão de Risco] --> B(Orquestração de Times)
     end
     
-    subgraph Pilar_2 [Arquitetura & Resiliência]
-    C[PWA SaaS Architecture] --> D(Resiliência Offline)
+    subgraph P2 [Arquitetura & Resiliência]
+    C[PWA SaaS Architecture] --> D(Fallback & Offline)
     end
     
-    subgraph Pilar_3 [Engenharia & Automação]
-    E[Playwright/Cypress] --> F(Validação Full-Stack: UI/API/DB)
+    subgraph P3 [Engenharia & Automação]
+    E[Playwright/Cypress] --> F(Validação: UI / API / Banco)
     end
     
     B & D & F --> G{QUALIDADE SISTÊMICA}
-    G --> H[Entrega Segura em Larga Escala]
+    G --> H[Entrega Segura e de Alto Valor]
 ```
 
 ---
 
-## 💼 Carreira e Consultoria
-Além da técnica, foco no posicionamento estratégico do QA como parceiro de negócio.
-- 👉 **[Guia de Upgrade de Carreira (LinkedIn Sênior)](docs/career/linkedin-revamp.md)**
+## 💼 Carreira
+Sugestões de como posicionar essas competências no mercado sênior.
+- 👉 **[Guia de Upgrade: LinkedIn Sênior](docs/career/linkedin-revamp.md)**
 
 ---
 
-## 🔒 Governança e Segurança
-Este repositório segue rígidas normas de *Data Masking* e *Compliance*.
-- 👉 **[Consulte as Diretrizes de Publicação](PUBLICATION-GUIDELINES.md)**
-
----
-
-## 🛠️ Tecnologias e Ferramentas
-**QA & Testing:** Cypress, Playwright (Web & Mobile), Appium, Jest.  
-**Frontend & PWA:** React, PWA Service Workers, Cache API.  
-**Backend & Database:** Node.js, REST APIs, **HeidiSQL / SQL Server / MySQL**.  
-**DevOps & Cloud:** **Azure DevOps (Boards, Test Plans, Analytics)**, GitHub Actions.
+## 🛠️ Stack Tecnológica
+**QA & Automação:** Cypress, Playwright (Web & Mobile), Appium, Jest.  
+**Frontend & PWA:** React, Service Workers, Cache API.  
+**Backend & Database:** Node.js, REST APIs, **SQL Server / MySQL**.  
+**Cloud & DevOps:** **Azure DevOps**, GitHub Actions.
 
 ---
 [LICENSE](LICENSE) | Copyright © 2026 Kássio Rocha
