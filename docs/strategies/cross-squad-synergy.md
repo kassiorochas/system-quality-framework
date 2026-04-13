@@ -9,6 +9,22 @@ Este documento descreve como otimizar a garantia de qualidade em ambientes onde 
 
 ---
 
+## 📈 Fluxo de Orquestração Cross-Squad
+
+Este diagrama ilustra como o QA Orchestrator quebra os silos para garantir a integridade de ponta a ponta:
+
+```mermaid
+flowchart LR
+    A[Squad A: Ingestão] -->|Cenários de Integração| B(QA ORCHESTRATOR)
+    C[Squad B: Processamento] -->|Contratos de API| B
+    B --> D{Validação E2E}
+    D -->|Sucesso| E[Release Unificada]
+    D -->|Falha| F[RCA: Diagnóstico de Causa Raiz]
+    F -->|Direcionamento| A & C
+```
+
+---
+
 ## 🚀 Os Desafios dos Silos de Conhecimento
 
 Em estruturas de squads, é comum que cada QA se torne um especialista profundo apenas no seu módulo. Isso gera riscos:
