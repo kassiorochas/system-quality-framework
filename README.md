@@ -43,20 +43,24 @@ Este diagrama ilustra como os pilares se conectam para entregar valor:
 
 ```mermaid
 flowchart TD
-    subgraph P1 [Estratégia & Governança]
-    A[Gestão de Risco] --> B(Orquestração de Times)
+    subgraph P1 [Orquestração de Qualidade]
+    A[Gestão de Risco] --> B(Orquestração Cross-Squad)
+    AA[Assets de Liderança]
     end
     
     subgraph P2 [Arquitetura & Resiliência]
     C[PWA SaaS Architecture] --> D(Fallback & Offline)
     end
     
-    subgraph P3 [Engenharia & Automação]
-    E[Playwright/Cypress] --> F(Validação: UI / API / Banco)
+    subgraph P3 [Engenharia de Automação]
+    E[Playwright / Cypress] --> F(Audit: UI / API / Banco)
     end
     
-    B & D & F --> G{QUALIDADE SISTÊMICA}
+    B & D & F & AA --> G{QUALIDADE SISTÊMICA}
     G --> H[Entrega Segura e de Alto Valor]
+
+    style G fill:#2d2d2d,stroke:#555,stroke-width:2px,color:#fff
+    style H fill:#1a1a1a,stroke:#888,color:#fff
 ```
 
 ---
