@@ -23,7 +23,7 @@ Como liderar a qualidade sistêmica e gerenciar riscos em ambientes complexos.
 - **[Sinergia Cross-Squad (E2E)](docs/strategies/cross-squad-synergy.md):** Focado em orquestrar a colaboração entre diferentes silos técnicos.
 - **[Governança e Mitigação de Risco](docs/strategies/enterprise-governance.md):** Gestão de parceiros, War Rooms e criticidade de prazos.
 - **[Narrativa de Testes (QA Notes & BDD)](docs/strategies/test-narrative-bdd.md):** Documentação técnica que serve de ponte entre o negócio e a engenharia.
-- **[Assets: Templates de Liderança](examples/templates/):** Checklists de prontidão e Matrizes de Risco.
+- **[Assets: Templates de Liderança](docs/templates/):** Checklists de prontidão e Matrizes de Risco.
 
 ### 2. Arquitetura & Resiliência
 Construindo softwares que suportam falhas e garantem uma boa experiência.
