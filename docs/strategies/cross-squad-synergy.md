@@ -9,18 +9,35 @@ Este documento descreve como otimizar a garantia de qualidade em ambientes onde 
 
 ---
 
-## 📈 Fluxo de Orquestração Cross-Squad
+## 📈 Diagrama de Fluxo: Silos vs Sinergia
 
-Este diagrama ilustra como o QA Orchestrator quebra os silos para garantir a integridade de ponta a ponta:
+Este diagrama ilustra a diferença entre a atuação isolada (Silos) e a orquestração ponta a ponta (Sinergia):
 
 ```mermaid
-flowchart LR
-    A[Squad A: Ingestão] -->|Cenários de Integração| B(QA ORCHESTRATOR)
-    C[Squad B: Processamento] -->|Contratos de API| B
-    B --> D{Validação E2E}
-    D -->|Sucesso| E[Release Unificada]
-    D -->|Falha| F[RCA: Diagnóstico de Causa Raiz]
-    F -->|Direcionamento| A & C
+graph TD
+    subgraph SquadC ["Squad C"]
+        QA_C[QA User Platform] -->|Valido UI| Interface[Interface]
+    end
+
+    subgraph Synergy ["Abordagem Sinérgica E2E"]
+        QA_Multi[QA Multi-Skill E2E]
+    end
+
+    subgraph SquadB ["Squad B"]
+        QA_B[QA Core] -->|Valida API| API[API]
+    end
+
+    subgraph SquadA ["Squad A"]
+        QA_Back[QA Backoffice] -->|Setup| Massa[Massa]
+    end
+
+    %% Conexões da Sinergia
+    QA_Multi --> Interface
+    QA_Multi --> API
+    QA_Multi -->|Domina o Fluxo| Massa
+
+    style Synergy fill:#2d2d2d,stroke:#555,stroke-width:2px
+    style QA_Multi fill:#1a1a1a,stroke:#888,color:#fff
 ```
 
 ---
