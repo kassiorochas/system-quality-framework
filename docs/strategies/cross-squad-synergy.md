@@ -1,4 +1,4 @@
-⬅️ [Voltar para o Início](../../README.md)
+⬅️ [Voltar para o Início](../../README.md) | 📄 [Continuação: Sinergia de Cenários](./scenario-synergy.md)
 
 # Estratégia de Qualidade: Sinergia entre Squads
 
@@ -77,4 +77,4 @@ A função do QA sênior é identificar **quem** deve corrigir o problema e forn
 3. **Visibilidade para a Gestão:** Relatórios que mostram a saúde do ecossistema completo, não apenas de um pedaço do código.
 
 ---
-⬅️ [Voltar para o Início](../../README.md)
+⬅️ [Voltar para o Início](../../README.md) | ➡️ [Próximo: Sinergia de Cenários](./scenario-synergy.md)
