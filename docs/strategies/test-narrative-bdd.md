@@ -4,7 +4,7 @@
 
 > "Um teste bem documentado não é burocracia. É a diferença entre um bug encontrado e um bug que vai para produção."
 
-A **Narrativa de Testes** é o workflow operacional que organiza a atuação do QA em dois momentos distintos e complementares: o **planejamento antes de testar** e a **evidência técnica durante a execução**.
+A **Narrativa de Testes** organiza a atuação do QA em dois momentos distintos: o **planejamento antes de testar** e o **registro técnico durante a execução**.
 
 Sem essa separação, o analista entra no ambiente sem contexto, testa sem critério e reporta sem rastreabilidade.
 
@@ -12,59 +12,59 @@ Sem essa separação, o analista entra no ambiente sem contexto, testa sem crit�
 
 ## As Duas Fases
 
-### Fase 1 — QA Notes (Planejamento e Descoberta)
+### Fase 1 — QA Notes (Planejamento)
 
-O QA Notes é criado **antes de qualquer execução**. Seu objetivo é consolidar o entendimento da demanda, mapear riscos e preparar a infraestrutura de teste — aplicando o princípio de **Shift-Left**: trazer a qualidade para o começo do processo, não para o final.
+Criado **antes de qualquer execução**. O objetivo é consolidar o entendimento da demanda, mapear riscos e preparar a infraestrutura de teste — aplicando o princípio de **Shift-Left**: trazer a qualidade para o início do processo.
 
 Um QA Notes bem escrito responde a seis perguntas antes de o teste começar:
 
 | Campo | Pergunta que responde |
 |---|---|
-| **Objetivo** | O que estou validando e por quê isso importa? |
+| **Objetivo** | O que estou validando e por que isso importa? |
 | **Escopo** | O que entra e o que está fora desta análise? |
 | **Regras de Negócio** | Quais são os critérios de aceite e os estados possíveis do sistema? |
-| **Dependências** | O que preciso ter pronto para começar? (ambientes, acessos, massa) |
+| **Dependências** | O que preciso ter pronto para começar? (ambientes, acessos, dados) |
 | **Massa de Dados** | Quais dados de teste cobrem cada cenário relevante? |
-| **Estratégia de Execução** | Em que ordem e de que forma os testes serão executados? |
+| **Estratégia de Execução** | Em que ordem e como os testes serão executados? |
 
-> ⚠️ Se um risco ou divergência for identificado durante o planejamento, ele entra no QA Notes como **Diagnóstico Prévio (RCA)** — assim o DEV já sabe por onde investigar antes mesmo do bug ser reportado formalmente.
+> ⚠️ **Diagnóstico Prévio (RCA):** Se uma inconsistência for identificada ainda no planejamento, ela entra no QA Notes com a hipótese de causa raiz. O DEV já sabe por onde investigar antes mesmo do bug ser reportado formalmente. Isso elimina ciclos de ida e volta.
 
 ---
 
 ### Fase 2 — QA Execução (Evidência Técnica)
 
-O QA Execução é o registro auditável do que foi testado. Ele transforma cada cenário em uma evidência estruturada, rastreável e compreensível para qualquer stakeholder — QA, DEV, PO ou Gestão.
+Registro auditável do que foi testado. Transforma cada cenário em evidência estruturada, rastreável e legível para qualquer stakeholder — QA, DEV, PO ou Gestão.
 
-Estrutura de cada cenário:
+Estrutura padrão de cada cenário:
 
 ```
 Cenário: [Nome descritivo do comportamento testado]
 
-  Dado que [contexto/pré-condição do sistema]
+  Dado que [contexto e pré-condição do sistema]
   Quando  [ação executada pelo usuário ou sistema]
-  Então   [resultado esperado verificado]
+  Então   [resultado esperado e verificado]
 
 Evidências:
-  - Status HTTP: [código]
-  - Payload: [resumo da resposta]
-  - DB: [query de validação e resultado]
-  - Print/Log: [referência]
+  - Status HTTP: [código de resposta]
+  - Payload: [resumo da resposta da API]
+  - DB: [resultado da query de validação]
+  - Print/Log: [referência da evidência visual]
 ```
 
 ---
 
-## Diagrama: Quando cada fase entra no processo
+## Diagrama: Fluxo da Task até a Produção
 
 ```mermaid
 flowchart LR
     A[Task Recebida] --> B[Análise do PR\n+ Documentação]
-    B --> C[QA Notes\nplanejamento]
-    C --> D{Gap de\njanela?}
-    D -->|Não| E[QA Execução\ncobertura completa]
-    D -->|Sim| F[Negociação\nde Prioridade]
+    B --> C[QA Notes\nPlanejamento]
+    C --> D{Janela de teste\nsuficiente?}
+    D -->|Sim| E[QA Execução\nCobertura completa]
+    D -->|Não| F[Negociação\nde Prioridade]
     F --> G[Sinergia de\nCenários]
     G --> E
-    E --> H[Report\n+ Evidências]
+    E --> H[Report +\nEvidências]
     H --> I[Validação\nem Produção]
 
     style C fill:#1a2a3a,stroke:#3a7aaa,stroke-width:2px
@@ -74,110 +74,69 @@ flowchart LR
 
 ---
 
-## Exemplo Real: Integração com API Regulatória Governamental
+## Exemplo Aplicado
 
-> 🔒 **Compliance:** Todos os dados de usuário abaixo são fictícios e gerados exclusivamente para o ambiente de homologação. Nenhum CPF, e-mail ou informação pessoal real é utilizado neste framework. Consulte a [política de Data Masking](../../README.md#-governança-e-segurança) do projeto.
+Para ilustrar a metodologia, considere um sistema fictício de **onboarding de usuários com verificação regulatória** — um padrão comum em plataformas financeiras, fintechs e qualquer produto sujeito a compliance.
 
----
+### Contexto do Exemplo
 
-### 🎯 Objetivo
-
-Validar as integrações de **Prioridade 0** — fluxos de Cadastro e Login — após a adoção de uma nova API regulatória governamental de verificação de impedimento de apostadores.
-
-O escopo cobre os quatro status de bloqueio impostos pela regulação: **12, 13, 14 e 15**.
+Um novo módulo de verificação de usuário é integrado ao fluxo de cadastro e login. O sistema consulta uma API externa e retorna diferentes estados de permissão. O QA precisa validar o comportamento da aplicação para cada estado possível.
 
 ---
 
-### 🛑 Status de Bloqueio e Regras de Negócio
+### QA Notes — Exemplo
 
-O sistema executa a verificação de impedimento em dois momentos distintos:
+**Objetivo**
+Validar o comportamento do sistema nos fluxos de Cadastro e Login após integração com API de verificação regulatória. Cobrir todos os estados de permissão retornados e garantir que cada um seja tratado corretamente no frontend, na API e no banco de dados.
 
-- **No Cadastro:** ao submeter um novo registro de usuário
-- **No Login:** disparado pela validação do primeiro login do dia (`bettor.last_login ≠ hoje`)
+**Escopo**
+Dentro do escopo:
+- Fluxo de cadastro com verificação de documento
+- Fluxo de login com checagem de status ativo/bloqueado
+- Regras de negócio para cada estado de resposta da API
 
-| Status | Nome | Regra no Cadastro | Regra no Login |
-|---|---|---|---|
-| **12** | Suspensão Temporária (Transição) | — | Período de carência: o usuário pode acessar e resgatar saldo por até 3 dias antes do Cron mover para status definitivo |
-| **13** | Programa Social (Benefício) | Bloqueado. Frontend exibe normativa regulatória | Livre — usuários existentes com esse CPF continuam operando normalmente por exceção de regra |
-| **14** | Autoexclusão Centralizada | Bloqueado com mensagem ao usuário | Inteiramente bloqueado. Reflete atualização no status da conta |
-| **15** | Ambos (13 + 14) | Tratamento unificado baseado na Autoexclusão | Dispara transição automática para Status 12 (logout + período de saque) antes do Cron mover para 15 definitivo |
+Fora do escopo:
+- Fluxo de recuperação de senha
+- Testes de performance e carga
 
----
+**Regras de Negócio**
 
-### 🚀 Estratégia de Execução e Gatilhos
-
-Existem dois caminhos para acionar a verificação no ambiente de homologação:
-
-#### Gatilho Automático — Primeiro Login do Dia
-
-Aciona a varredura "por baixo dos panos" no momento do login.
-
-**Requisito:** `bettor.last_login` deve conter uma data anterior a hoje.
-
-**Comportamento:** o sistema identifica o impedimento, executa o logout e move o usuário para Status 12 quando aplicável.
-
-#### Gatilho Manual — Logins Subsequentes
-
-Para situações em que o usuário já logou hoje (`last_login = hoje`), a verificação deve ser forçada manualmente via rotas do Cron:
-
-```
-1. GET /verify-social-status     → identifica o CPF e seu impedimento
-2. GET /suspend-[tipo-do-motivo] → move para Status 12
-3. GET /block-prevented-bettors  → aplica status 13/14/15 após backdate
-```
-
----
-
-### 🔑 Massa de Dados — Ambiente de Homologação
-
-| Cenário | Status | CPFs Fictícios (homologação) |
+| Estado | Comportamento no Cadastro | Comportamento no Login |
 |---|---|---|
-| Sem impedimento | OK | Qualquer CPF válido gerado |
-| Programa Social | 13 | 28784142090, 08782758000, 08940473965 |
-| Autoexclusão | 14 | 51077358008, 62564939074, 15690288691 |
-| Ambos | 15 | 10996230572 |
+| **Aprovado** | Cadastro liberado normalmente | Acesso liberado |
+| **Pendente** | Cadastro aceito com aviso de análise | Acesso temporário com restricao de funcionalidades |
+| **Bloqueado** | Cadastro impedido com mensagem ao usuário | Acesso negado com redirecionamento |
+| **Exceção** | Tratado caso a caso por regra de negócio | Acesso condicional definido pela regra vigente |
+
+**Dependências**
+- Ambiente de homologação com a nova versão da API integrada
+- Massa de dados com documentos que retornam cada estado
+- Acesso ao painel de administração para forçar estados sem aguardar processamento automático
+- Swagger do serviço de verificação disponível para validação de rotas
+
+**Estratégia de Execução**
+Agrupar cenários por estado e validar cada um de ponta a ponta antes de avançar. Priorizar os estados de bloqueio — são os de maior risco para o go-live. Utilizar sinergia de cenários para cobrir múltiplas camadas em cada execução (ver [Sinergia de Cenários](./scenario-synergy.md)).
 
 ---
 
-### 🛠️ Scripts de Reset para Testes Repetíveis
+### QA Execução — Exemplo de Cenário
 
-Para reutilizar a mesma conta de teste em diferentes cenários, aplique os scripts abaixo antes de cada execução:
-
-```sql
--- Disparar verificação de impedimento no próximo login
-UPDATE bettor
-SET last_login = DATEADD(day, -1, GETDATE())
-WHERE email = '[analista]@[empresa].com';
-
--- Simular CPF com impedimento específico
-UPDATE bettor_personal_data
-SET document_number = '51077358008' -- Status 14: Autoexclusão
-WHERE bettor_id = [id_da_conta_de_teste];
-
--- Manipular janela de transição do Status 12
-UPDATE social_program_check
-SET updated_at = DATEADD(day, -4, GETDATE()) -- Força vencimento do prazo
-WHERE bettor_id = [id_da_conta_de_teste];
 ```
+Cenário: Impedir cadastro de usuário com status Bloqueado
 
-> 💡 Esses scripts fazem parte da estratégia de **Sinergia de Cenários**: ao controlar o estado da massa com precisão, uma única conta de teste cobre múltiplos status sequencialmente, sem necessidade de criar novos usuários para cada fluxo.
+  Dado que o sistema está integrado com a API de verificação regulatória
+  E o documento informado retorna o status "Bloqueado"
+  Quando o usuário submete o formulário de cadastro
+  Então o sistema deve impedir o cadastro
+  E exibir a mensagem de impedimento correspondente ao status
+  E não deve criar registro do usuário no banco de dados
 
----
-
-### ⏱️ Rotas do Job Runner (Cron Service)
-
-As rotinas agendadas da aplicação estão hospedadas no `job-runner-service` e documentadas via Swagger. No ambiente de homologação, elas podem ser disparadas manualmente para simular o comportamento noturno.
-
-**Prefixo de rota:** `/benefit-test`
-
-| Rota | Função |
-|---|---|
-| `/verify-social-status` | Varre a base confirmando impedimentos perante a API regulatória |
-| `/suspend-self-excluded` | Aplica suspensão a bettors com autoexclusão ativa |
-| `/suspend-benefits` | Atualiza bettors identificados sob programa social |
-| `/suspend-multiple-reasons` | Manipula cenários de Status 15 (combinação de impedimentos) |
-| `/block-prevented-bettors` | Executa o bloqueio transacional oficial após vencimento do prazo de transição |
-| `/send-advise-withdraw-email` | Dispara e-mail de aviso de saque para bettors com saldo em Status 12 |
+Evidências:
+  - Status HTTP: 403 Forbidden
+  - Payload: { "status": "blocked", "reason": "regulatory_check_failed" }
+  - DB: SELECT retorna 0 registros para o documento testado
+  - Print: captura do frontend com mensagem de bloqueio visível
+```
 
 ---
 
@@ -186,19 +145,19 @@ As rotinas agendadas da aplicação estão hospedadas no `job-runner-service` e 
 A Narrativa de Testes não se limita à interface. Cada cenário é validado em múltiplas camadas:
 
 ### Frontend
-- Exibição correta da mensagem de bloqueio para cada status
-- Comportamento do fluxo de cadastro ao identificar CPF impedido
-- Redirecionamento pós-login para bettors em transição
+- Mensagem correta exibida para cada estado
+- Redirecionamento adequado após ação bloqueada
+- Campos desabilitados ou ocultados conforme regra de negócio
 
 ### API e Network
-- Verificação do payload de resposta via DevTools
-- Status HTTP correto para cada status de bloqueio
+- Status HTTP correto para cada estado
+- Payload de resposta com os campos esperados
 - Identificação de erros silenciosos — aqueles que não aparecem na tela, mas comprometem o sistema
 
 ### Banco de Dados
-- Confirmação da persistência correta do status após ação do Cron
-- Rastreamento da coluna `updated_at` na tabela de controle de transição
-- Validação do `last_login` antes e após o login para garantir que o gatilho foi ativado
+- Persistência correta do estado após ação do usuário ou processamento automático
+- Ausência de registros indevidos em fluxos de bloqueio
+- Integridade dos dados após transições de estado
 
 ---
 
